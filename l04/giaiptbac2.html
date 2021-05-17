@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giai phuong trinh bac 2</title>
+</head>
+<body>
+    <h1>Giai phuong trinh bac 2 ax<sup>2</sup> + bx + c = 0</h1>
+    <form id="form-data" action="" method="get" onsubmit="caculate();return false;">
+        <div>
+            <label>He so thu nhat</label>
+            <input type="number" name="a" placeholder="he so thu nhat">
+        </div>
+        <div>
+            <label>He so thu hai</label>
+            <input type="number" name="b" placeholder="he so thu 2">
+        </div>
+        <div>
+            <label>He so thu ba</label>
+            <input type="number" name="c" placeholder="he so thu 3">
+        </div>
+        <div>
+            <label>He so thu nhat</label>
+            <input type="submit" value="Ket qua" name="sumbit">
+        </div>
+    </form>
+    <h2>Ket qua: <span id="result"></span></h2>
+    <script>
+         function caculate  (){
+            let form =  document.getElementById("form-data")
+            let inputform = form.querySelectorAll("input")
+            let a = inputform[0].value;
+            let b = inputform[1].value;
+            let c = inputform[2].value;
+            let result = document.getElementById("result")
+            if (a == 0) {
+                if (b == 0 && c!=0) {
+                    result.innerText = "Phuong trinh vo nghiem";
+                } else if(b == 0 && c==0) {
+                    result.innerText = "Phuong trinh co vo so nghiem";
+                } else {
+                    result.innerText =  -c/b;
+                }
+            } else {
+                let delta = Math.pow(b, 2) - 4 * a * c
+                if (delta < 0) {
+                    result.innerText = "Phuong trinh vo nghiem";
+                } else {
+                    let nghiem1 = (-b + Math.sqrt(delta)) / 2*a;
+                    let nghiem2 = (-b - Math.sqrt(delta)) / 2*a;
+                    result.innerText = "nghiem 1: " + nghiem1 + "; nghiem 2:" + nghiem2;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

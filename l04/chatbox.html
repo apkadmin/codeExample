@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBox</title>
+</head>
+<style>
+    input:focus {
+        outline: unset;
+    }
+
+    button {
+        border: unset;
+        background-color: unset;
+    }
+
+    .chatContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+    .fromyou{
+        background-color: #0eadf9;
+        border-radius: 8px 8px 0px 8px;
+        height: 30px;
+        color: white;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        width: fit-content;
+        float: right;
+        padding: 0px 5px;
+    }
+    .toyou{
+        background-color: pink;
+        border-radius: 8px 8px 8px 0px;
+        height: 30px;
+        color: white;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        width: fit-content;
+        float: left;
+        padding: 0px 5px;
+    }
+    .conttent{
+        padding: 5px;
+        display: grid;
+    }
+    .conttent > div {
+        display: list-item;
+    }
+</style>
+
+<body>
+    <div class="chatbox" style="
+      width: 300px;
+    display: flex;
+    height: 400px;
+    background-color: #dadada47;
+    box-shadow: 0 0 12px;
+    border: unset;
+    border-radius: 5px;
+    flex-direction: column;">
+        <div style="border-radius: 5px 5px 0px 0px;
+        background-color: white;
+        box-shadow: 0px 2px 8px 0px;
+        height: 9%;
+        justify-content: center;
+        display: block;">
+            <div style="text-align: center;
+            font-size: 1.5em;">Chat Fulel</h3>
+            </div>
+        </div>
+        <div class="chatContainer">
+            <div class="conttent" id="content">
+                <div>
+                    <div class="fromyou">
+                        vay tay
+                    </div>
+                </div>
+               <div>
+                <div class="toyou">
+                    hello
+                </div>
+               </div>
+               
+            </div>
+            <div style="display: flex;justify-content: space-between;align-items: center;">
+                <input type="text" name="conttent" placeholder="Nhap noi dung" style="border: unset;
+                width: 80%;
+                height: 30px;
+                border-radius: 5px;
+            ">
+                <div> <button onclick="sendMessage()"><img src="send.png" width="20px" height="20px"></button></div>
+            </div>
+
+        </div>
+        <script>
+
+            function sendMessage(){
+                let conntent = document.getElementById("content");
+                var datahtml = document.createElement("div");
+                var datahtml1 = document.createElement("div");
+                datahtml1.setAttribute("class", "fromyou");
+                datahtml1.innerText = "viết tin nhắn kiểu fffffffffffffffffffffffffffffasdfasdjkfhasdklfasdlj sdfjhasdlpfjkasd;lfj  asdfasdfkjfffffffffffffffffffffffff";
+                datahtml.appendChild(datahtml1);
+                conntent.appendChild(datahtml);
+            }
+        </script>
+</body>
+
+</html>

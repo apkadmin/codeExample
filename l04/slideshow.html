@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide show</title>
+</head>
+<style>
+    button{
+        border: unset;
+        background-color: unset;
+    }
+</style>
+<body>
+    <div id="slideshow" style="width: 60%; height: 300px;  position: relative;background-size: cover; background-image: url('anh1.jpg');">
+        <div style="    position: absolute;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        height: 100%;
+    ">
+            <button onclick="backImage()"><img src="arrowright.png" width="40px" height="40px" style="    transform: rotate(
+                180deg
+                );"></button>
+            <button onclick="nextImage()"><img src="arrowright.png" width="40px" height="40px"></button>
+        </div>
+    </div>
+    <script>
+        var indexImg = 0;
+        var listImage = ["anh1.jpg", "anh2.jpg", "anh3.jpg", "anh4.jpg"];
+        function backImage(){
+            let img = document.getElementById("slideshow");
+            if (indexImg > 0) {
+                indexImg -= 1
+            } else {
+                indexImg = listImage.length - 1;
+            }
+            img.style.backgroundImage = "url("+listImage[indexImg]+")"
+            // img.src = listImage[indexImg];
+        }
+        function nextImage(){
+            let img = document.getElementById("slideshow");
+            if (indexImg < listImage.length - 1) {
+                indexImg += 1
+            } else {
+                indexImg = 0;
+            }
+            img.style.backgroundImage = "url("+listImage[indexImg]+")"
+            // img.src = listImage[indexImg];
+        }
+        window.onload = function(){
+            setInterval(()=>{
+                let img = document.getElementById("slideshow");
+            if (indexImg > 0) {
+                indexImg -= 1
+            } else {
+                indexImg = listImage.length - 1;
+            }
+            img.style.backgroundImage = "url("+listImage[indexImg]+")"
+            }, 2000)
+        }
+    </script>
+</body>
+</html>

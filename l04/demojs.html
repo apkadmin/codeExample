@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>giai he phuong trinh bac nhat ax + b = 0</h1>
+    <form id="formdata" method="get" onsubmit="calculate();return false;">
+        <div>
+            <label>Nhap vao so thu nhat</label>
+            <input type="number" placeholder="He so thu nhat">
+        </div>
+        <div>
+            <label>Nhap vao so thu hai</label>
+            <input type="number" placeholder="He so thu hai">
+        </div>
+        <div>
+            <input type="submit" value="Ket qua" name="submit">
+        </div>
+    </form>
+    <div id="ket-qua"></div>
+    <!-- <div id="harryup">
+        <div style="color: red">hello</div>
+    </div> -->
+    <script>
+       function calculate(){
+         let fromdata =  document.getElementById("formdata");
+          let hs1 = fromdata.querySelectorAll("input")[0].value;
+          let hs2 = fromdata.querySelectorAll("input")[1].value;
+            if(hs1 == "0" && hs2 == "0"){
+                document.getElementById("ket-qua").innerText = "Phuong trinh co vo so nghiem";
+            } else if(hs1 == "0" && hs2 != "0") {
+                document.getElementById("ket-qua").innerText = "Phuong trinh vo nghiem";
+            } else {
+                document.getElementById("ket-qua").innerText = - hs2/ hs1;
+            }
+       }
+       // (function(){
+        //     alert("hello")
+        // })()
+        // window.onload = function(){
+        //     alert("hello")
+        // }
+        // window.onload = () => {
+        //     // setInterval(()=>{
+        //     //     let data = ["khanh", "duong", "nam", "quan", "huyen"];
+                
+        //     //    let a =  document.getElementById("harryup");
+        //     //    a.firstElementChild.innerText = "hello "+ data[Math.ceil(Math.random()* data.length)] ;
+        //     // }, 500)
+        //     setTimeout(()=>{
+        //         alert("hello");
+        //     }, 6000);
+        // }
+    </script>
+</body>
+</html>

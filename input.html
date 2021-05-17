@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Demo btn</title>
+</head>
+<style type="text/css">
+  button {
+    width: 100px;
+    height: 40px;
+    margin: 40px;
+  }
+
+  .btn-primary {
+    background-color: #00ffd0;
+    color: white;
+  }
+
+  .btn-border {
+    color: green;
+    border-width: 2px;
+    border-style: solid;
+    border-color: green;
+    background-color: #121738;
+  }
+
+  #btn3 {
+    border-radius: 8px;
+    background-color: #ffa500;
+    color: white;
+    border-width: 0px;
+
+  }
+
+  .btn4 button {
+    border-radius: 8px;
+    border: solid #ffa500 2px;
+    color: #ffa500;
+    background-color: unset;
+  }
+
+  .btn5 {
+    width: fit-content;
+    background-color: red;
+  }
+
+  .btn5 button {
+    border: dashed black 1px;
+    margin: 3px;
+    background-color: unset;
+    color: black;
+  }
+
+  .btn6 {
+    width: fit-content;
+    background-color: red;
+  }
+
+  .btn6 button {
+    border-style: dashed;
+    border-color: black;
+
+    margin: 3px;
+    background-color: unset;
+    color: black;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  .linear {
+    background-image: linear-gradient(90deg, black, #4eff12, black);
+  }
+
+  .shadow {
+    box-shadow: 2px 1px 17px 0px;
+    background-color: unset;
+  }
+
+  .shadowInset {
+    box-shadow: inset 1px 1px 13px;
+    background-color: unset;
+  }
+</style>
+
+<body>
+  <div style="width: 100%;
+    background-color: #121738;
+    height: 900px;">
+    <div>
+      <button class="btn-primary">Link 01</button>
+    </div>
+     <div>
+      <button class="btn-border">Link 02</button>
+    </div>
+     <div>
+      <button id="btn3">Link 01</button>
+    </div>
+     <div class="btn4">
+      <button>Link 04</button>
+    </div>
+     <div >
+      <div class="btn5">
+      <button>Link 01</button>
+    </div>
+    </div>
+     <div class="btn6">
+      <button>Link 01</button>
+    </div>
+     <div >
+      <button class="linear">Link 01</button>
+    </div>
+     <div>
+      <button class="shadow">Link 01</button>
+    </div>
+     <div>
+      <button class="shadowInset">Link 01</button>
+    </div>
+     <div>
+      <button style="display: flex;justify-content: space-between;border: unset;align-content: center;align-items: center;border-radius: 50px;background-color: #d800ff;">
+        <div style="width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: red;"></div>
+        <span>Button 9</span>
+      </button>
+    </div>
+  </div>
+  <style>
+.inputfield {
+  height: 30px;
+  margin: 10px 0px 10px 0px;
+  border-width: 1px;
+  border-radius: 5px;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4eff12;
+  color: white;
+  border: unset;
+}
+  </style>
+  <div style="width: fit-content; height: auto; border-radius: 10px; border: solid black 2px;text-align: center;">
+    <div style="margin: 20px;">
+    <h2>Member Login</h2>
+    <form class="form" method="get" action="" onsubmit="return false;">
+      <div>
+        <input type="text" class="inputfield" name="username" placeholder="username">
+      </div>
+      <div>
+        <input type="password" class="inputfield" name="pass" placeholder="password">
+      </div>
+      <div>
+        <input type="submit" id="submit" class="inputfield" class="btn-primary" name="submit" value="Login">
+      </div>
+    </form>
+    </div>
+  </div>
+  
+</body>
+
+</html>
