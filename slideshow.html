@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        button {
+            border: unset;
+        }
+    </style>
+    <div style="    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;">
+        <h1 style="text-align: center; color: white">CSS SLIDER ANIMATION</h1>
+        <div id="slideshow"
+            style="width: 60%;    box-shadow: white 0 0 9px; height: 50%;position: relative; background-color: white;">
+            <div style="width: 100%; height: 100%; position: absolute;justify-content: space-between;
+            display: flex;
+            align-items: center">
+                <button onclick="preImage()"> <img width="40px" height="40px" src="arrow.png" style="transform: rotate(
+                    180deg);"></button>
+                <button onclick="nextImage()">
+                    <img width="40px" height="40px" src="arrow.png">
+                </button>
+
+            </div>
+            <img id="imagePreview" width="100%" height="100%" src="anhnen.jpg">
+        </div>
+    </div>
+    <script>
+        var imgs = ["anh1.png", "anh2.jpg", "anh3.jpg", "anh4.jpg"]
+        var index = 0;
+        function nextImage(){
+            let img = document.getElementById("imagePreview")
+            if(index < imgs.length - 1){
+                index++;
+               
+            } else {
+                index = 0;
+            }
+            img.src = imgs[index]
+        }
+        function preImage(){
+            let img = document.getElementById("imagePreview")
+            if(index > 0){
+                index--;
+               
+            } else {
+                index = imgs.length - 1;
+            }
+            img.src = imgs[index]
+        }
+        // window.onload = ()=>{
+        //     setInterval(()=>{
+        //         let img = document.getElementById("imagePreview")
+        //             if(index < imgs.length - 1){
+        //                 index++;
+                    
+        //             } else {
+        //                 index = 0;
+        //             }
+        //             img.src = imgs[index]
+        //     }, 1000)
+        // }
+        (function(){
+                 setInterval(()=>{
+                let img = document.getElementById("imagePreview")
+                    if(index < imgs.length - 1){
+                        index++;
+                    
+                    } else {
+                        index = 0;
+                    }
+                    img.src = imgs[index]
+            }, 1000)
+        })()
+    </script>
+</body>
+
+</html>
